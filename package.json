@@ -1,0 +1,25 @@
+{
+  "name": "jadwal-daftar-bol",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satyakresna/jadwal-daftar-bol.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/satyakresna/jadwal-daftar-bol/issues"
+  },
+  "homepage": "https://github.com/satyakresna/jadwal-daftar-bol#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "chalk": "^4.1.0",
+    "jsdom": "^16.4.0"
+  }
+}
