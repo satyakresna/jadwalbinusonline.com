@@ -18,7 +18,7 @@ jobs:
         node-version: '>=12.14.1'
     - name: Install dependecies
       run: npm ci
-    - name: Store scrapin schedule into raw file
+    - name: Store scraping schedule into raw file
       run: npm run schedule:raw
     - name: Commit files
       run: |
