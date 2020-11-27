@@ -14,6 +14,7 @@ const getSchedule = require('./scraper/schedule.js');
         if (text === "") {
             let newSchedules = [];
             newSchedules.push(newSchedule);
+            console.log(newSchedules);
             fs.writeFile(outputFile, JSON.stringify(newSchedules), err => {
                 if (err) {
                     console.log(err);
@@ -29,6 +30,7 @@ const getSchedule = require('./scraper/schedule.js');
             const lastSchedule = schedules[schedules.length - 1];
             if (lastSchedule.batas_pendaftaran !== newSchedule.batas_pendaftaran) {
                 schedules.push(newSchedule);
+                console.log(schedules);
                 fs.writeFile(outputFile, JSON.stringify(schedules), err => {
                     if (err) {
                         console.log(err);
