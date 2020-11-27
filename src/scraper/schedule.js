@@ -7,6 +7,7 @@ module.exports = async () => {
 
     const data = await page.evaluate(() => {
         var content = document.querySelector('div#inside-post-wrapper > div:nth-child(4)');
+        var nama_gelombang = content.querySelector('h4').innerText.trim();
         var table = content.querySelector('table');
         var rows = Array.from(table.querySelectorAll('tr'));
         var batas_pendaftaran, tkps, pengumuman_tkps, orientasi, kuliah_perdana;
@@ -33,6 +34,7 @@ module.exports = async () => {
         }
 
         return {
+            nama_gelombang,
             batas_pendaftaran,
             tkps,
             pengumuman_tkps,
