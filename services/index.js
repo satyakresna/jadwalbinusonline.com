@@ -2,7 +2,7 @@ const pkgDir = require('pkg-dir');
 const { join } = require('path');
 const fs = require('fs');
 const fsPromises = fs.promises;
-const getSchedule = require('./scraper/schedule.js');
+const getSchedule = require('./scraper.js');
 
 (async () => {
     try {
@@ -38,6 +38,7 @@ const getSchedule = require('./scraper/schedule.js');
     
                     console.log('Jadwal baru berhasil disimpan');
                 });
+                // TODO: gunakan newSchedule untuk kirim pesan via email
             } else {
                 console.log("Tidak ada jadwal baru");
             }

@@ -1,23 +1,23 @@
 {
-  "name": "jadwal-daftar-bol",
+  "name": "jadwal-binus-online",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "services/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "schedule:raw": "node src/index.js"
+    "schedule:raw": "node services/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/satyakresna/jadwal-daftar-bol.git"
+    "url": "git+https://github.com/satyakresna/jadwalbinusonline.com.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/satyakresna/jadwal-daftar-bol/issues"
+    "url": "https://github.com/satyakresna/jadwalbinusonline.com/issues"
   },
-  "homepage": "https://github.com/satyakresna/jadwal-daftar-bol#readme",
+  "homepage": "https://github.com/satyakresna/jadwalbinusonline.com.git#readme",
   "dependencies": {
     "pkg-dir": "^5.0.0",
     "puppeteer": "^5.5.0"
