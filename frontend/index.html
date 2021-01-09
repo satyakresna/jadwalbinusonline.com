@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Binus Online</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/">JADWALBINUSONLINE.COM</a>
+    </header>
+    <main>
+        <h1>Info Jadwal Pendaftaran Binus Online Learning (Jakarta)</h1>
+        <p>Jenuh membuka <a href="/">situs ini</a> dan <a href="https://onlinelearning.binus.ac.id/jadwal-pendaftaran-jakarta/" target="_blank" rel="noopener" rel="noreferrer">situs jadwal pendaftaran Binus Online Learning</a> secara berkala?</p>
+        <p>Ayo berlangganan info jadwal pendaftaran Binus Online Learning melalui email!</p>
+        <p><em>Kamu bisa membatalkan langganan di atas lewat email kamu</em></p>
+        <form>
+            <input type="name" placeholder="Nama Anda">
+            <input type="email" id="email" placeholder="Email Anda">
+            <button>SAYA INGIN BERLANGGANAN</button>
+        </form>
+    </main>
+    <footer>
+        <a href="https://github.com/satyakresna" target="_blank" rel="noopener" rel="noreferrer">github.com/satyakresna</a> - 2021
+    </footer>
+    <script>
+        fetch('/api/last_schedule')
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error));
+    </script>
+</body>
+</html>

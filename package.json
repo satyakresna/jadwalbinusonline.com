@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/satyakresna/jadwalbinusonline.com.git#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "pkg-dir": "^5.0.0",
     "puppeteer": "^5.5.0"
   }
