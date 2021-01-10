@@ -1,6 +1,8 @@
 {
     "version": 2,
     "env": {
+      "MG_DOMAIN": "@mg-domain-binus-online",
+      "MG_PRIVATE_KEY": "@mg-private-key"
     },
     "github": {
         "enabled": false
