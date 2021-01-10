@@ -3,6 +3,7 @@ const { join } = require('path');
 const fs = require('fs');
 const fsPromises = fs.promises;
 const getSchedule = require('./scraper.js');
+const newsletter = require('./newsletter.js');
 
 (async () => {
     try {
@@ -14,7 +15,6 @@ const getSchedule = require('./scraper.js');
         if (text === "") {
             let newSchedules = [];
             newSchedules.push(newSchedule);
-            console.log(newSchedules);
             fs.writeFile(outputFile, JSON.stringify(newSchedules), err => {
                 if (err) {
                     console.log(err);
@@ -30,7 +30,6 @@ const getSchedule = require('./scraper.js');
             const lastSchedule = schedules[schedules.length - 1];
             if (lastSchedule.batas_pendaftaran !== newSchedule.batas_pendaftaran) {
                 schedules.push(newSchedule);
-                console.log(schedules);
                 fs.writeFile(outputFile, JSON.stringify(schedules), err => {
                     if (err) {
                         console.log(err);
@@ -39,6 +38,7 @@ const getSchedule = require('./scraper.js');
                     console.log('Jadwal baru berhasil disimpan');
                 });
                 // TODO: gunakan newSchedule untuk kirim pesan via email
+                newsletter.send(newSchedule);
             } else {
                 console.log("Tidak ada jadwal baru");
             }

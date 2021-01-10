@@ -18,8 +18,8 @@ jobs:
         node-version: '>=12.14.1'
     - name: Install dependecies
       run: npm ci
-    - name: Store scraping schedule into raw file
-      run: npm run schedule:raw
+    - name: Store new schedule into raw file and send newsletter
+      run: npm run schedule:run
     - name: Commit files
       run: |
         git config --local user.email ${{ secrets.MY_EMAIL }}

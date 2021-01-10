@@ -2,10 +2,10 @@
   "name": "jadwal-binus-online",
   "version": "1.0.0",
   "description": "",
-  "main": "services/index.js",
+  "main": "services/scraper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "schedule:raw": "node services/index.js",
+    "schedule:run": "node services/index.js",
     "dev": "postcss frontend/css/style.css -o frontend/css/index.css --watch",
     "build": "NODE_ENV=production postcss frontend/css/style.css -o frontend/css/index.css"
   },
