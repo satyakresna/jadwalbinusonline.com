@@ -4,31 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Binus Online</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <a href="/">JADWALBINUSONLINE.COM</a>
-    </header>
-    <main>
-        <h1>Info Jadwal Pendaftaran Binus Online Learning (Jakarta)</h1>
-        <p>Jenuh membuka <a href="/">situs ini</a> dan <a href="https://onlinelearning.binus.ac.id/jadwal-pendaftaran-jakarta/" target="_blank" rel="noopener" rel="noreferrer">situs jadwal pendaftaran Binus Online Learning</a> secara berkala?</p>
-        <p>Ayo berlangganan info jadwal pendaftaran Binus Online Learning melalui email!</p>
-        <p><em>Kamu bisa membatalkan langganan di atas lewat email kamu</em></p>
-        <form>
-            <input type="name" placeholder="Nama Anda">
-            <input type="email" id="email" placeholder="Email Anda">
-            <button>SAYA INGIN BERLANGGANAN</button>
-        </form>
-    </main>
-    <footer>
-        <a href="https://github.com/satyakresna" target="_blank" rel="noopener" rel="noreferrer">github.com/satyakresna</a> - 2021
-    </footer>
-    <script>
+    <link href="./css/index.css" rel="stylesheet">
+    <script async>
         fetch('/api/last_schedule')
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            document.getElementById('namaGelombang').textContent = data.nama_gelombang;
+            document.getElementById('batasPendaftaran').textContent = data.batas_pendaftaran;
+            document.getElementById('tkps').textContent = data.tkps;
+            document.getElementById('pengumuman').textContent = data.pengumuman_tkps;
+            document.getElementById('orientasi').textContent = data.orientasi;
+            document.getElementById('kuliahPerdana').textContent = data.kuliah_perdana;
+        })
         .catch(error => console.log(error));
     </script>
+    <script defer>
+
+    </script>
+</head>
+<body>
+    <div class="container mx-auto flex flex-col">
+        <header class="text-base p-4 mb-4 border-b border-gray-200">
+            <u><a href="/">JADWALBINUSONLINE.COM</a></u>
+        </header>
+        <main class="px-4">
+            <h1 class="text-xl font-bold mb-4"><span class="block">Info Jadwal Pendaftaran</span> <span class="block">Binus Online Learning (Jakarta)</span></h1>
+            <div>
+                <h2 id="namaGelombang" class="font-bold text-xl mb-4">Gelombang TBA</h2>
+                <div class="mb-4">
+                    <p class="text-lg font-bold">Batas Pendaftaran</p>
+                    <p class="text-base" id="batasPendaftaran">TBA</p>
+                </div>
+                <div class="mb-4">
+                    <p class="text-lg font-bold">Tes Potensi Keberhasilan Studi (TKPS)</p>
+                    <p class="text-base" id="tkps">TBA</p>
+                </div>
+                <div class="mb-4">
+                    <p class="text-lg font-bold">Pengumuman TKPS</p>
+                    <p class="text-base" id="pengumuman">TBA</p>
+                </div>
+                <div class="mb-4">
+                    <p class="text-lg font-bold">Orientasi</p>
+                    <p class="text-base" id="orientasi">TBA</p>
+                </div>
+                <div class="mb-4">
+                    <p class="text-lg font-bold">Kuliah Perdana</p>
+                    <p class="text-base" id="kuliahPerdana">TBA</p>
+                </div>
+            </div>
+            <p class="leading-relaxed font-bold md:text-center">Jenuh membuka <a class="underline text-blue-700" href="/">situs ini</a> dan <a class="underline text-blue-700" href="https://onlinelearning.binus.ac.id/jadwal-pendaftaran-jakarta/" target="_blank" rel="noopener" rel="noreferrer">situs jadwal pendaftaran Binus Online Learning (Jakarta)</a> secara berkala?</p>
+            <p class="leading-relaxed font-bold md:text-center">Ayo berlangganan melalui email!</p>
+            <div class="mt-4">
+                <form class="grid grid-cols-1 gap-6">
+                    <label for="name" class="block">
+                        <span class="text-gray-700">Nama Anda</span>
+                        <input id="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" placeholder="Nama Anda">
+                    </label>
+                    <label for="email" class="block">
+                        <span class="text-gray-700">Email Anda</span>
+                        <input id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" placeholder="Email Anda">
+                    </label>
+                    <button class="bg-blue-700 text-white rounded p-2 w-full">SAYA INGIN BERLANGGANAN</button>
+                    <p><em class="block text-sm">Anda bisa membatalkan langganan dari pesan masuk</em></p>
+                </form>
+            </div>
+            <h2 class="text-xl font-bold my-4">Sangkalan</h2>
+            <p class="leading-relaxed mb-4">Data jadwal pendaftaran diambil dari <a class="underline text-blue-700" href="https://onlinelearning.binus.ac.id/jadwal-pendaftaran-jakarta/" target="_blank" rel="noopener" rel="noreferrer">situs jadwal pendaftaran Binus Online Learning (Jakarta)</a> dan situs <a class="text-blue-700 underline" href="/">jadwalbinusonline.com</a> tidak berafiliasi dengan Binus.</p>
+            <p class="leading-relaxed mb-4">Data langganan disimpan di situs <a class="text-blue-700 underline" href="/">jadwalbinusonline.com</a> dan hanya digunakan untuk memberikan informasi jadwal pendaftaran Binus Online Learning (Jakarta). Anda bisa membatalkan langganan sewaktu-waktu dari pesan masuk</p>
+        </main>
+        <footer class="text-base text-center mt-4 p-4 border-t border-gray-200">
+            <a href="https://github.com/satyakresna" target="_blank" rel="noopener" rel="noreferrer">github.com/satyakresna</a> - 2021
+        </footer>
+    </div>
 </body>
 </html>

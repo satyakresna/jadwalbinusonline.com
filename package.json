@@ -5,7 +5,9 @@
   "main": "services/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "schedule:raw": "node services/index.js"
+    "schedule:raw": "node services/index.js",
+    "dev": "postcss frontend/css/style.css -o frontend/css/index.css --watch",
+    "build": "NODE_ENV=production postcss frontend/css/style.css -o frontend/css/index.css"
   },
   "repository": {
     "type": "git",
@@ -19,8 +21,14 @@
   },
   "homepage": "https://github.com/satyakresna/jadwalbinusonline.com.git#readme",
   "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "autoprefixer": "^10.2.1",
+    "cssnano": "^4.1.10",
     "express": "^4.17.1",
     "pkg-dir": "^5.0.0",
-    "puppeteer": "^5.5.0"
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
+    "puppeteer": "^5.5.0",
+    "tailwindcss": "^2.0.2"
   }
 }
