@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Binus Online</title>
     <link href="./css/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script async>
         fetch('/api/last_schedule')
         .then(response => response.json())
@@ -19,13 +21,13 @@
         .catch(error => console.log(error));
     </script>
 </head>
-<body>
+<body class="font-sans">
     <div class="container mx-auto flex flex-col">
-        <header class="text-base p-4 mb-4 border-b border-gray-200">
+        <header class="text-lg font-bold p-4 mb-4 border-b border-gray-200">
             <u><a href="/">JADWALBINUSONLINE.COM</a></u>
         </header>
         <main class="px-4">
-            <h1 class="text-xl font-bold mb-4"><span class="block">Info Jadwal Pendaftaran</span> <span class="block">Binus Online Learning (Jakarta)</span></h1>
+            <h1 class="text-2xl font-bold mb-4"><span class="block md:inline">Info Jadwal Pendaftaran</span> <span class="block md:inline">Binus Online Learning (Jakarta)</span></h1>
             <div>
                 <h2 id="namaGelombang" class="font-bold text-xl mb-4">Gelombang TBA</h2>
                 <div class="mb-4">
@@ -49,8 +51,10 @@
                     <p class="text-base" id="kuliahPerdana">TBA</p>
                 </div>
             </div>
-            <p class="leading-relaxed font-bold md:text-center">Jenuh membuka <a class="underline text-blue-700" href="/">situs ini</a> dan <a class="underline text-blue-700" href="https://onlinelearning.binus.ac.id/jadwal-pendaftaran-jakarta/" target="_blank" rel="noopener" rel="noreferrer">situs jadwal pendaftaran Binus Online Learning (Jakarta)</a> secara berkala?</p>
-            <p class="leading-relaxed font-bold md:text-center">Ayo berlangganan melalui email!</p>
+            <div class="bg-indigo-500 text-white shadow-sm rounded p-4 tracking-wider">
+                <p class="leading-relaxed font-semibold md:text-center">Jenuh membuka <a class="underline" href="/">situs ini</a> dan <a class="underline" href="https://onlinelearning.binus.ac.id/jadwal-pendaftaran-jakarta/" target="_blank" rel="noopener" rel="noreferrer">situs jadwal pendaftaran Binus Online Learning (Jakarta)</a> secara berkala?</p>
+                <p class="leading-relaxed font-semibold md:text-center">Ayo berlangganan melalui email!</p>
+            </div>
             <div class="mt-4">
                 <form class="grid grid-cols-1 gap-6">
                     <label for="name" class="block">
@@ -64,12 +68,19 @@
                         <span class="text-red-500 text-sm" id="emailRequired"></span>
                     </label>
                     <button type="submit" class="bg-blue-700 text-white rounded p-2 w-full">SAYA INGIN BERLANGGANAN</button>
-                    <p><em class="block text-sm">Anda bisa membatalkan langganan dari pesan masuk</em></p>
+                    <p><em class="block text-sm">Anda bisa membatalkan langganan dari pesan masuk.</em></p>
                 </form>
             </div>
             <h2 class="text-xl font-bold my-4">Sangkalan</h2>
             <p class="leading-relaxed mb-4">Data jadwal pendaftaran diambil dari <a class="underline text-blue-700" href="https://onlinelearning.binus.ac.id/jadwal-pendaftaran-jakarta/" target="_blank" rel="noopener" rel="noreferrer">situs jadwal pendaftaran Binus Online Learning (Jakarta)</a> dan situs <a class="text-blue-700 underline" href="/">jadwalbinusonline.com</a> tidak berafiliasi dengan Binus.</p>
-            <p class="leading-relaxed mb-4">Data langganan disimpan di situs <a class="text-blue-700 underline" href="/">jadwalbinusonline.com</a> dan hanya digunakan untuk memberikan informasi jadwal pendaftaran Binus Online Learning (Jakarta). Anda bisa membatalkan langganan sewaktu-waktu dari pesan masuk</p>
+            <p class="leading-relaxed mb-4">Data langganan disimpan di situs <a class="text-blue-700 underline" href="/">jadwalbinusonline.com</a> dan hanya digunakan untuk memberikan informasi jadwal pendaftaran Binus Online Learning (Jakarta). Anda bisa membatalkan langganan sewaktu-waktu dari pesan masuk.</p>
+            <h2 class="text-xl font-bold my-4">Apresiasi</h2>
+            <p class="leading-relaxed mb-4">Jika software ini memberikan manfaat bagi Anda, silakan apresiasi saya dengan memberi dukungan di:</p>
+            <ul class="mb-4 ml-4 space-y-2 list-disc">
+                <li><a class="text-blue-700 underline" href="https://saweria.co/satyakresna" target="_blank">saweria.co/satyakresna</a></li>
+                <li><a class="text-blue-700 underline" href="https://trakteer.id/satyakresna" target="_blank">trakteer.id/satyakresna</a></li>
+                <li><a class="text-blue-700 underline" href="https://karyakarsa.com/satyakresna" target="_blank">karyakarsa.com/satyakresna</a></li>
+            </ul>
         </main>
         <footer class="text-base text-center mt-4 p-4 border-t border-gray-200">
             <a href="https://github.com/satyakresna" target="_blank" rel="noopener" rel="noreferrer">github.com/satyakresna</a> - 2021
@@ -107,13 +118,19 @@
             let name = document.getElementById('name').value;
             let email = document.getElementById('email').value;
             if (name === '' && email === '') {
+                document.getElementById('name').classList.add('border-red-500');
                 document.getElementById('nameRequired').textContent = 'Nama wajib diisi!';
+                document.getElementById('email').classList.add('border-red-500');
                 document.getElementById('emailRequired').textContent = 'Email wajib diisi!';
             } else if (name === '') {
+                document.getElementById('name').classList.add('border-red-500');
                 document.getElementById('nameRequired').textContent = 'Nama wajib diisi!';
+                document.getElementById('email').classList.remove('border-red-500');
                 document.getElementById('emailRequired').textContent = '';
             } else if (email === '') {
+                document.getElementById('name').classList.remove('border-red-500');
                 document.getElementById('nameRequired').textContent = '';
+                document.getElementById('email').classList.add('border-red-500');
                 document.getElementById('emailRequired').textContent = 'Email wajib diisi!';
             } else {
                 request('/api/subscribe', {
@@ -127,7 +144,9 @@
                     swal("Berhasil!", data.message, "success");
                     document.getElementById('name').value = '';
                     document.getElementById('email').value = '';
+                    document.getElementById('name').classList.remove('border-red-500');
                     document.getElementById('nameRequired').textContent = '';
+                    document.getElementById('name').classList.remove('border-red-500');
                     document.getElementById('emailRequired').textContent = '';
                 })
                 .catch(err => {
