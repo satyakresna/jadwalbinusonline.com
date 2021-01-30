@@ -1,25 +1,20 @@
 # jadwalbinusonline.com
 
-Jadwal Daftar Binus Online Learning (Jakarta).
+Situs dan layanan untuk memberikan jadwal pendaftaran Binus Online Learning (Jakarta).
 
 ## Data yang diambil
 
-- Nama Gelombang (mis: Gelombang November) => nama_gelombang
-- Pendaftaran sampai dengan => batas_pendaftaran
-- Test Potensi Keberhasilan Studi => tanggal_tkps
-- Pengumuman Hasil TKPS => pengumuman_tkps
-- Orientasi => orientasi
-- Perkuliahan Perdana => kuliah_perdana
+- Nama Gelombang
+- Batas Pendaftaran
+- Tanggal Tes Potensi Keberhasilan Studi (TKPS)
+- Pengumuman Hasil TKPS
+- Orientasi
+- Kuliah Perdana
 
 ## Mekanisme (MVP)
 
-- Ambil data
-- Taruh dalam json
-- Pakai GitHub Action
-- Kirim ke email setiap kali ada pendaftaran gelombang baru.
-- Ada opsi untuk berlangganan jadwal daftar dan berhenti berlangganan. Isi nama dan email.
-
-## Tech Stack
-
-- Crawler (NodeJS, JSDOM)
-- Scheduler (kirim email) pakai GitHub Action
+1. Pengguna menuju ke situs jadwalbinusonline.com
+2. Situs jadwalbinusonline.com menampilkan jadwal pendaftaran terkini yang diambil dari [situs jadwal pendaftaran Binus Online Learning (Jakarta)](https://onlinelearning.binus.ac.id/jadwal-pendaftaran-jakarta/).
+3. Tersedia pilihan untuk berlangganan jadwal pendaftaran via email untuk memudahkan pengguna sehingga pengguna tidak perlu membuka situs jadwalbinusonline.com atau situs jadwal pendaftaran binus online learning (Jakarta) setiap saat.
+4. Untuk berhenti berlangganan bisa dilakukan jika ada info jadwal pendaftaran baru yang masuk ke email pengguna.
+5. Fitur layanan berlangganan via email menggunakan Github Action dengan mengecek apakah ada data jadwal pendaftaran baru. **Jadwal hanya dikirim via email bila ada data jadwal pendaftaran terbaru.**
