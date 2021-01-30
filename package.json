@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "schedule:run": "node services/index.js",
     "dev": "postcss frontend/css/style.css -o frontend/css/index.css --watch",
-    "build": "NODE_ENV=production postcss frontend/css/style.css -o frontend/css/index.css"
+    "inject:analytics": "node analytics.js",
+    "build": "NODE_ENV=production postcss frontend/css/style.css -o frontend/css/index.css && npm run inject:analytics"
   },
   "repository": {
     "type": "git",
