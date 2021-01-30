@@ -17,8 +17,6 @@ jobs:
       run: npm ci
     - name: Build
       run: npm run build
-      env:
-        GA_TRACKER_ID: ${{ secrets.GA_TRACKER_ID }}
     - name: Deploy to production
       uses: amondnet/vercel-action@v19
       id: vercel-action-production
