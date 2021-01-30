@@ -1,8 +1,5 @@
 name: Scrape Jadwal Daftar Binus Online Learning
 on:
-  push:
-    branches:
-      - main
   schedule:
     # Run at 23:59 every day
     - cron: '59 23 * * *'
@@ -20,6 +17,9 @@ jobs:
       run: npm ci
     - name: Store new schedule into raw file and send newsletter
       run: npm run schedule:run
+      env:
+        MG_DOMAIN: ${{ secrets.MG_DOMAIN }}
+        MG_SENDER_MAIL_API_KEY: ${{ secrets.MG_SENDER_MAIL_API_KEY }}
     - name: Commit files
       run: |
         git config --local user.email ${{ secrets.MY_EMAIL }}
