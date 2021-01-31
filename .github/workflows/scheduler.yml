@@ -1,8 +1,8 @@
 name: Scrape Jadwal Daftar Binus Online Learning
 on:
   schedule:
-    # Run at 23:59 every day
-    - cron: '59 23 * * *'
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
 
 jobs:
   build:
