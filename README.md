@@ -6,8 +6,8 @@ Situs dan layanan untuk memberikan jadwal pendaftaran Binus Online Learning (Jak
 
 - Nama Gelombang
 - Batas Pendaftaran
-- Tanggal Tes Potensi Keberhasilan Studi (TKPS)
-- Pengumuman Hasil TKPS
+- Tanggal Tes Potensi Keberhasilan Studi (TPKS)
+- Pengumuman Hasil TPKS
 - Orientasi
 - Kuliah Perdana
 

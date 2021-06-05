@@ -11,8 +11,8 @@ module.exports.send = function (newSchedule) {
         subject: 'Jadwal Terbaru Pendaftaran Binus Online Learning (Jakarta)',
         template: 'register-announcement',
         'v:batas_pendaftaran': newSchedule.batas_pendaftaran,
-        'v:tkps': newSchedule.tkps,
-        'v:pengumuman_tkps': newSchedule.pengumuman_tkps,
+        'v:tpks': newSchedule.tpks,
+        'v:pengumuman_tpks': newSchedule.pengumuman_tpks,
         'v:orientasi': newSchedule.orientasi,
         'v:kuliah_perdana': newSchedule.kuliah_perdana
     };

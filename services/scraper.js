@@ -10,7 +10,7 @@ module.exports = async () => {
         var nama_gelombang = content.querySelector('h4').innerText.trim();
         var table = content.querySelector('table');
         var rows = Array.from(table.querySelectorAll('tr'));
-        var batas_pendaftaran, tkps, pengumuman_tkps, orientasi, kuliah_perdana;
+        var batas_pendaftaran, tpks, pengumuman_tpks, orientasi, kuliah_perdana;
         for (let i = 0; i < rows.length; i++) {
             const row = rows[i];
             var column = row.querySelectorAll('td')[1];
@@ -19,10 +19,10 @@ module.exports = async () => {
                     batas_pendaftaran = column.innerText;
                     break;
                 case 1:
-                    tkps = column.innerText;
+                    tpks = column.innerText;
                     break;
                 case 2:
-                    pengumuman_tkps = column.innerText;
+                    pengumuman_tpks = column.innerText;
                     break;
                 case 3:
                     orientasi = column.innerText;
@@ -36,8 +36,8 @@ module.exports = async () => {
         return {
             nama_gelombang,
             batas_pendaftaran,
-            tkps,
-            pengumuman_tkps,
+            tpks,
+            pengumuman_tpks,
             orientasi,
             kuliah_perdana
         }
